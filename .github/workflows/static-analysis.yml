@@ -24,4 +24,11 @@ jobs:
       - name: Run ESLint and generate XML report
         run: npx eslint . --ext .js,.ts -f junit -o eslint-report.xml
 
+      - name: Upload ESLint XML report
+        uses: actions/upload-artifact@v3
+        with:
+          name: eslint-report
+          path: eslint-report.xml
+
+
 
